@@ -269,13 +269,17 @@ font-size: 1.2em;
 		.fa-envira { background: -webkit-linear-gradient(#afbd22, #6db33f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 		
 			
-		.covidattnCont { background-color: #FF6D6D; padding: 15px 20px; display: grid; grid-template-columns: 1fr 1fr; justify-items: center; gap:20px; }
+		.covidattnCont { background-color: #FF6D6D; padding: 15px 20px; display: grid; grid-template-columns: 40% 60%; justify-items: center; gap:20px; }
 .caleft, .caright { color: #FFF; }
 #cnoo, #cndr { background-color: #FFFFFF; display: inline-block !important; padding: 6px 15px; color: #FF6D6D; margin-left: 10px; border: 2px solid #FFF; transition: all 0.3s ease; }
 #cnoo:hover, #cndr:hover { text-decoration: none; border: 2px solid #FFF; background-color: rgba(255,255,255,0); color: #FFF; }
 
 @media screen and (max-width: 767px) {
 	.covidattnCont { grid-template-columns: auto; }
+	.covidattnCont span { display:block; }
+	#cnoo, #cndr { margin-top: 5px; margin-left: auto; margin-right: auto; display: table !important; }
+	.caleft p, .caright p { text-align: center; }
+	#cnoo { margin-bottom: 25px; }
 }
 		
 		footer { background-color: #1f1f1f; padding-top:50px; padding-bottom: 20px; color: #999;}
@@ -303,7 +307,7 @@ font-size: 1.2em;
 Order Online</a></p>
 		  </div>
 		  <div class="caright">
-			  <p><span>For reservations</span> <a id="cndr" href="tel:+1-212-265-2703"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; (212) 265-2703</a></p>
+			  <p><span>Indoor Dining now open. Please call for reservations.</span> <a id="cndr" href="tel:+1-212-265-2703"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; (212) 265-2703</a></p>
 		  </div>
 	</div>
 	
