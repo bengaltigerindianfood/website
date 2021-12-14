@@ -269,8 +269,7 @@ footer h3 { margin-bottom: 1em !important; }
 		.fa-envira { background: -webkit-linear-gradient(#afbd22, #6db33f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 		
 			
-		.covidattnCont { background-color: #FF6D6D; padding: 15px 20px; display: grid; grid-template-columns: 40% 60%; justify-items: center; gap:20px; }
-.caleft, .caright { color: #FFF; }
+		.covidattnCont { background-color: #FF6D6D; padding: 15px 20px; display: block; text-align: center; gap:20px; color: #FFF; }
 #cnoo, #cndr { background-color: #FFFFFF; display: inline-block !important; padding: 6px 15px; color: #FF6D6D; margin-left: 10px; border: 2px solid #FFF; transition: all 0.3s ease; }
 #cnoo:hover, #cndr:hover { text-decoration: none; border: 2px solid #FFF; background-color: rgba(255,255,255,0); color: #FFF; }
 
@@ -303,13 +302,8 @@ footer h3 { margin-bottom: 1em !important; }
 <body>
 	
 	<div class="covidattnCont">
-		  <div class="caleft">
 			  <p><span>Contactless Take-Out or Delivery</span> <a id="cnoo" ​class="chownow-order-online" ​="" href="https://ordering.chownow.com/order/26156/locations" target="_blank"><i class="fa fa-shopping-bag" aria-hidden="true"></i>&nbsp;
 Order Online</a></p>
-		  </div>
-		  <div class="caright">
-			  <p><span>Indoor Dining now open. Please call for reservations.</span> <a id="cndr" href="tel:+1-212-265-2703"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; (212) 265-2703</a></p>
-		  </div>
 	</div>
 	
 	
@@ -558,6 +552,8 @@ Order Online</a></p>
 							<li><span>Sweet Bottled Iced Tea</span> - 3</li>
 							<li><span>Water</span> - 2</li>
 							<li><span>Apple Juice</span> - 3</li>
+							<li><span>Corkage Fee</span> Wine - 5</li>
+							<li><span>Corkage Fee</span> Beer - 2</li>
 						</ul>
 					</li>
 				</ul>
@@ -756,11 +752,11 @@ Order Online</a></p>
 						</tr>
 						<tr>
 							<td class="sat6">Sat.</td>
-							<td class="sat6">1pm &#8211; 10pm</td>
+							<td class="sat6">12:30pm &#8211; 10pm</td>
 						</tr>
 						<tr>
 							<td class="sun0">Sun.</td>
-							<td class="sun0">1pm &#8211; 10pm</td>
+							<td class="sun0">12:30pm &#8211; 10pm</td>
 						</tr>
 					</table>
 					<p style="text-align:left; padding-left:3px;">Holidays:&nbsp;&nbsp;&nbsp;11:30am &#8211; 10pm</p>
@@ -775,7 +771,7 @@ Order Online</a></p>
 		    <div class="clear20"></div>
 		    <div class="row copyright">
 			    <div class="col-sm-8">
-				    <p>&copy; 2021 Bengal Tiger Indian Food – NYC, All Rights Reserved.</p>
+				    <p>&copy; <span id="year"></span> Bengal Tiger Indian Food – NYC, All Rights Reserved.</p>
 			    </div>
 			    <div class="col-sm-4 text-right">
 				    <p>Powered by <a href="https://opuscule.com/" target="_blank" title="Small Business Web Design and SEO">Opuscule</a></p>
@@ -792,6 +788,7 @@ Order Online</a></p>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script>
+	document.getElementById("year").innerHTML = new Date().getFullYear();
 	jQuery(document).ready(function(){
 		// day of week for hours of operation
     var $today = new Date().getDay();
