@@ -160,6 +160,8 @@
 				.covidattnCont { background-color: #FF6D6D; padding: 15px 20px; display: block; text-align: center; gap:20px; color: #FFF; }
 		#cnoo, #cndr { background-color: #FFFFFF; display: inline-block !important; padding: 6px 15px; color: #FF6D6D; margin-left: 10px; border: 2px solid #FFF; transition: all 0.3s ease; }
 		#cnoo:hover, #cndr:hover { text-decoration: none; border: 2px solid #FFF; background-color: rgba(255,255,255,0); color: #FFF; }
+		
+		.modal { z-index: 9999999999; }
 
 		/* 12 - Media Queries */
 		@media all and (max-width: 1150px) {
@@ -197,8 +199,21 @@
 			a.oonline { background-color:#63bbb2 !important; width: 100%; display: block !important; margin: 0 auto 40px !important; text-align: center !important; padding: 15px 0 !important; }
 			.dkbtn { display: none !important; }
 			footer h3 { margin-bottom: 0.6em !important; }
+			.covidattnCont { grid-template-columns: auto; }
+			.covidattnCont span { display:block; }
+			#cnoo, #cndr { margin-top: 5px; margin-left: auto; margin-right: auto; display: table !important; }
+			.caleft p, .caright p { text-align: center; }
+			#cnoo { margin-bottom: 0; }
+			.lunchBG h3, .allMenu h3, .pfx h3 { margin-bottom:1em; }
 		}
-
+		
+		@media (max-width:575px) {
+			.covidattnCont p { display:grid !important; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
+			.covidattnCont p span { grid-column: 1 / 3; grid-row: 1 / 2; }
+			.covidattnCont #cnoo { grid-column: 1 / 2; grid-row: 2 / 3; }
+			.covidattnCont #cndr { grid-column: 2 / 3; grid-row: 2 / 3; }
+		}
+		
 		/* iPhone Landscape */
 		@media screen and (max-width: 480px) and (orientation: landscape) {	
 			.halfOff { top:0; right:0; z-index:9999; background-image:none; background: none; width:0; height:0; position:absolute; }
@@ -218,14 +233,7 @@
 		}
 		
 
-		@media screen and (max-width: 767px) {
-			.covidattnCont { grid-template-columns: auto; }
-			.covidattnCont span { display:block; }
-			#cnoo, #cndr { margin-top: 5px; margin-left: auto; margin-right: auto; display: table !important; }
-			.caleft p, .caright p { text-align: center; }
-			#cnoo { margin-bottom: 0; }
-			.lunchBG h3, .allMenu h3, .pfx h3 { margin-bottom:1em; }
-		}
+		
 		
 		footer { background-color: #1f1f1f; padding-top:50px; padding-bottom: 20px; color: #999;}
 			footer h3 { color:#FFF; font-size: 1.2em; text-transform: uppercase; font-weight: bold; text-decoration: none; margin-top: 1.5em; }
@@ -247,8 +255,15 @@
 <body>
 	
 	<div class="covidattnCont">
-			  <p class="mb-0 pb-0"><span>No reservations. First come, first served.</span> <a id="cnoo" ​class="chownow-order-online" href="https://ordering.chownow.com/order/26156/locations" rel="noopener nofollow" target="_blank"><i class="fa fa-shopping-bag" aria-hidden="true"></i>&nbsp;
-Order Online</a></p>
+		<p class="d-flex justify-content-between align-items-center mb-0 pb-0">
+			<a id="cnoo" class="chownow-order-online" href="https://ordering.chownow.com/order/26156/locations" rel="noopener nofollow" target="_blank">
+				<i class="fa fa-shopping-bag" aria-hidden="true"></i>&nbsp;Order Online
+			</a>
+			<span>No reservations. First come, first served.</span>
+			<a id="cndr" data-toggle="modal" data-target="#newsModal">
+				<i class="fa fa-map-marker-alt" aria-hidden="true"></i>&nbsp;We're Moving
+			</a>
+		</p>
 	</div>
 	
 	
@@ -709,7 +724,29 @@ Order Online</a></p>
 	    </div><!-- .container -->
     </footer>
     
+	
+	
+	
+	<div class="modal" id="newsModal" tabindex="-1">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h4 class="modal-title">Important News!</h4>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+			<p>We are moving just two blocks away in the next few weeks to <strong style="white-space: nowrap;">234 W 56th Street</strong> (between Broadway and 8th).</p>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.840446777041!2d-73.98522202388295!3d40.7655338713857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258f7fcaaed1d%3A0xbfe9fc32c8cb570a!2s234%20W%2056th%20St%2C%20New%20York%2C%20NY%2010019!5e0!3m2!1sen!2sus!4v1715634067962!5m2!1sen!2sus" width="100%" height="240" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			<p style="margin-top:1rem;">Check back here soon for more information, or contact us at <a href="tel:+12122652703" title="Call Bengal Tiger Indian Food" style="white-space: nowrap;">(212) 265-2703</a> to learn more.</p>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
     
+
     
 
  
@@ -722,7 +759,16 @@ Order Online</a></p>
 		// day of week for hours of operation
     var $today = new Date().getDay();
     if ($today == 0){ jQuery('.sun0').addClass('today');} else if ($today == 1){jQuery('.mon1').addClass('today');} else if ($today == 2){jQuery('.tue2').addClass('today');} else if ($today == 3){jQuery('.wed3').addClass('today');} else if ($today == 4){jQuery('.thu4').addClass('today');} else if ($today == 5){jQuery('.fri5').addClass('today');} else {jQuery('.sat6').addClass('today');}	
+	
+
+		setTimeout(function() {
+			$('#newsModal').modal('show');
+		}, 3000);  // milliseconds
+	
 	});
+	
+	
+	
 	
 </script>
  <script src='https://cf.chownowcdn.com/latest/static/integrations/ordering-modal.min.js' data-chownow-company-id='26156' defer></script>
