@@ -222,9 +222,11 @@
 				.fa-envira { background: -webkit-linear-gradient(#afbd22, #6db33f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 				
 					
-				.covidattnCont { background-color: #FF6D6D; padding: 15px 20px; display: block; text-align: center; gap:20px; color: #FFF; }
-		#cnoo, #cndr { background-color: #FFFFFF; display: inline-block !important; padding: 6px 15px; color: #FF6D6D; margin-left: 10px; border: 2px solid #FFF; transition: all 0.3s ease; }
-		#cnoo:hover, #cndr:hover { text-decoration: none; border: 2px solid #FFF; background-color: rgba(255,255,255,0); color: #FFF; }
+				.notificationStripe { background-color: #FF6D6D; padding: 15px 20px; display: block; text-align: center; gap:20px; color: #FFF; }
+		.notificationBtn { background-color: #FFFFFF; display: inline-block !important; padding: 6px 15px; color: #FF6D6D !important; margin: auto; border: 2px solid #FFF; transition: all 0.3s ease; }
+		.notificationBtn:hover,
+		.notificationBtn:focus { text-decoration: none; border: 2px solid #FFF; background-color: rgba(255,255,255,0); color: #FFF !important; }
+			.notificationBtn .fa { margin-right:0.4rem; }
 		
 		.modal { z-index: 9999999999; }
 
@@ -264,19 +266,18 @@
 			a.oonline { background-color:#63bbb2 !important; width: 100%; display: block !important; margin: 0 auto 40px !important; text-align: center !important; padding: 15px 0 !important; }
 			.dkbtn { display: none !important; }
 			footer h3 { margin-bottom: 0.6em !important; }
-			.covidattnCont { grid-template-columns: auto; }
-			.covidattnCont span { display:block; }
-			#cnoo, #cndr { margin-top: 5px; margin-left: auto; margin-right: auto; display: table !important; }
+			.notificationStripe { grid-template-columns: auto; }
+			.notificationStripe span { display:block; }
 			.caleft p, .caright p { text-align: center; }
-			#cnoo { margin-bottom: 0; }
 			.lunchBG h3, .allMenu h3, .pfx h3 { margin-bottom:1em; }
 		}
 		
 		@media (max-width:575px) {
-			.covidattnCont p { display:grid !important; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
-			.covidattnCont p span { grid-column: 1 / 3; grid-row: 1 / 2; }
-			.covidattnCont #cnoo { grid-column: 1 / 2; grid-row: 2 / 3; }
-			.covidattnCont #cndr { grid-column: 2 / 3; grid-row: 2 / 3; }
+			.notificationStripe a { margin-top:0.5rem; margin-bottom:0.5rem; }
+			/* .notificationStripe p { display:grid !important; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
+			.notificationStripe p span { grid-column: 1 / 3; grid-row: 1 / 2; }
+			.notificationStripe #cnoo { grid-column: 1 / 2; grid-row: 2 / 3; }
+			.notificationStripe #cndr { grid-column: 2 / 3; grid-row: 2 / 3; } */
 		}
 		
 		/* iPhone Landscape */
@@ -324,15 +325,16 @@
   </head>
 <body>
 	
-	<div class="covidattnCont">
-		<p class="d-flex justify-content-between align-items-center mb-0 pb-0">
-			<a id="cnoo" href="https://www.grubhub.com/restaurant/bengal-tiger-indian-food-58-w-56th-st-new-york/287683?classicAffiliateId=%2Fr%2Fw%2F19118%2F&utm_source=https://restaurant.grubhub.com&utm_medium=OOL&utm_campaign=order%20online&utm_content=287683" rel="noopener nofollow" target="_blank">
-				<i class="fa fa-shopping-bag" aria-hidden="true"></i>&nbsp;Order Online
+	<div class="notificationStripe">
+		<div class="d-flex justify-content-md-between flex-column flex-sm-row align-items-center mb-0 pb-0">
+			<a class="notificationBtn" href="https://www.grubhub.com/restaurant/bengal-tiger-indian-food-58-w-56th-st-new-york/287683?classicAffiliateId=%2Fr%2Fw%2F19118%2F&utm_source=https://restaurant.grubhub.com&utm_medium=OOL&utm_campaign=order%20online&utm_content=287683" rel="noopener nofollow" target="_blank">
+				<i class="fa fa-shopping-bag" aria-hidden="true"></i>Order Online
 			</a>
-			<a id="cndr" data-toggle="modal" data-target="#newsModal">
-				<i class="fa fa-map-marker-alt" aria-hidden="true"></i>&nbsp;We've Moved!
+			<a href="tel:+12122652703" class="notificationBtn" title="Call for Reservations"><i class="fa fa-mobile-alt" aria-hidden="true"></i>Reservations</a>
+			<a id="cndr" class="notificationBtn" data-toggle="modal" data-target="#newsModal">
+				<i class="fa fa-map-marker-alt" aria-hidden="true"></i>We've Moved!
 			</a>
-		</p>
+		</div>
 	</div>
 	
 	
