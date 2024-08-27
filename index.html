@@ -3,21 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-B7MZLSXBD7"></script>
+	<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-B7MZLSXBD7'); </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css?p=1" rel="stylesheet">
-
     <title>NYC Indian Restaurant - Bengal Tiger Indian Food</title>
 	<meta name="description" content="Casual, authentic Indian restaurant open every day for lunch and dinner. Dine-in, take out, or delivery - vegetarian friendly, vegan and gluten free options" />
-
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-B7MZLSXBD7"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'G-B7MZLSXBD7');
-	</script>
-
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="NYC Indian Restaurant - Bengal Tiger Indian Food" />
+	<meta property="og:description" content="Casual, authentic Indian restaurant open every day for lunch and dinner. Dine-in, take out, or delivery - vegetarian friendly, vegan and gluten free options" />
+	<meta property="og:url" content="https://www.bengaltigerindianfood.com/" />
+	<meta property="og:site_name" content="Bengal Tiger" />
 	<script type="application/ld+json">
 	{
 	  "@context": "https://schema.org",
@@ -327,12 +325,9 @@
 			<a class="notificationBtn" href="https://www.grubhub.com/restaurant/bengal-tiger-indian-food-58-w-56th-st-new-york/287683?classicAffiliateId=%2Fr%2Fw%2F19118%2F&utm_source=https://restaurant.grubhub.com&utm_medium=OOL&utm_campaign=order%20online&utm_content=287683" rel="noopener nofollow" target="_blank">
 				<i class="fa fa-shopping-bag" aria-hidden="true"></i>Order Online
 			</a>
-			<div style="text-align: center;">
-				<a href="https://resy.com/cities/new-york-ny/venues/bengal-tiger-indian-food" id="resyButton-rxAjJLT4yTIYXWHTJstV2">Reservations on Resy</a>
-			</div>
 
 			<a id="cndr" class="notificationBtn" data-toggle="modal" data-target="#newsModal">
-				<i class="fa fa-map-marker-alt" aria-hidden="true"></i>We've Moved!
+				<i class="fa fa-clipboard-list" aria-hidden="true"></i>Reservations
 			</a>
 		</div>
 	</div>
@@ -789,7 +784,7 @@
 				    <p>&copy; <span id="year"></span> Bengal Tiger Indian Food – NYC, All Rights Reserved.</p>
 			    </div>
 			    <div class="col-sm-4 text-right">
-				    <p>Powered by <a href="https://opuscule.com/" target="_blank" title="Small Business Web Design and SEO">Opuscule</a></p>
+				    <p>Powered by <a href="https://opuscule.com/" target="_blank" title="Small Business Web Design and SEO" rel="noopener">Opuscule</a></p>
 			    </div>
 		    </div>
 	    </div><!-- .container -->
@@ -802,15 +797,23 @@
 	  <div class="modal-dialog">
 		<div class="modal-content">
 		  <div class="modal-header">
-			<h4 class="modal-title">Important News!</h4>
+			<h4 class="modal-title">Reservations</h4>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			  <span aria-hidden="true">&times;</span>
 			</button>
 		  </div>
 		  <div class="modal-body">
-			<p>Please visit our new location just two blocks away at <strong style="white-space: nowrap;">234 W 56th Street</strong> (between Broadway and 8th).</p>
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.8452983707048!2d-73.98474392388295!3d40.76542717138546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258f9f5f6365f%3A0x12448b5388945afe!2sBengal%20Tiger!5e0!3m2!1sen!2sus!4v1718194564630!5m2!1sen!2sus" width="100%" height="240" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-			<p style="margin-top:1rem;">Call <a href="tel:+12122652703" title="Call Bengal Tiger Indian Food" style="white-space: nowrap;">(212) 265-2703</a> for any questions.</p>
+
+			<div class="container">
+				<div class="row d-flex align-items-center">
+					<div class="col-sm-6 text-center">
+						<a href="https://resy.com/cities/new-york-ny/venues/bengal-tiger-indian-food" id="resyButton-rxAjJLT4yTIYXWHTJstV2">Reservations on Resy</a>
+					</div>
+					<div class="col-sm-6 text-center">
+						<a class="notificationBtn mb-2" href="tel:+12122652703" target="_blank" rel="noopener"><i class="fa fa-phone" aria-hidden="true"></i>(212) 265-2703</a>
+					</div>
+				</div>
+			</div>
 		  </div>
 		</div>
 	  </div>
@@ -830,6 +833,11 @@
 
 	document.getElementById("year").innerHTML = new Date().getFullYear();
 	jQuery(document).ready(function(){
+
+		$('#newsModal a, #newsModal .modal-body span').on('click', function() {
+			$('#newsModal').modal('hide');
+		});
+
 		// day of week for hours of operation
     	var $today = new Date().getDay();
     	if ($today == 0){ jQuery('.sun0').addClass('today');} else if ($today == 1){jQuery('.mon1').addClass('today');} else if ($today == 2){jQuery('.tue2').addClass('today');} else if ($today == 3){jQuery('.wed3').addClass('today');} else if ($today == 4){jQuery('.thu4').addClass('today');} else if ($today == 5){jQuery('.fri5').addClass('today');} else {jQuery('.sat6').addClass('today');}
