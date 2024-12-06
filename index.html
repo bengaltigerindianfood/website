@@ -51,7 +51,7 @@
 		  "Thursday",
 		  "Friday"
 		],
-		"opens": "11:30",
+		"opens": "11:00",
 		"closes": "15:00"
 	  },{
 		"@type": "OpeningHoursSpecification",
@@ -81,6 +81,9 @@
 	</script>
 
     <style>
+		:root {
+		  --primary-color: #FF6D6D;
+		}
 		html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,img,abbr,acronym,address,big,cite,code,del,dfn,em,font,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,hgroup,menu,nav,summary,time,mark,audio,video,header,footer{ margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;background:transparent; }
 		.themenu{text-align:center;}
 		.insidespan,.cateringTrays p{font-weight:bold;font-size:1.3em;}
@@ -221,12 +224,28 @@
 
 
 				.notificationStripe { background-color: #FFF; padding: 15px 20px; display: block; text-align: center; gap:20px; color: #FFF; }
-		.notificationBtn { background-color: #FF6D6D; display: inline-block !important; padding: 6px 15px; color: #FFF !important; margin: auto; border: 2px solid #FF6D6D; transition: all 0.3s ease; cursor:pointer; }
+		.notificationBtn { background-color: var(--primary-color); display: inline-block; padding: 6px 15px; color: #FFF !important; margin: auto; border: 2px solid var(--primary-color); transition: all 0.3s ease; cursor:pointer; }
 		.notificationBtn:hover,
-		.notificationBtn:focus { text-decoration: none; border: 2px solid #FF6D6D; background-color: rgba(255,255,255,0); color: #FF6D6D !important; }
+		.notificationBtn:focus { text-decoration: none; border: 2px solid var(--primary-color); background-color: rgba(255,255,255,0); color: var(--primary-color) !important; }
 			.notificationBtn .fa { margin-right:0.4rem; }
 
 		.modal { z-index: 9999999999; }
+
+		.order_online_btn svg {
+			width: 1rem;
+			height: 1rem;
+			margin-right: 0.5rem;
+		}
+
+		.order_online_btn path {
+			fill: #FFF;
+			transition: all 0.3s ease;
+		}
+
+		.order_online_btn:hover path,
+		.order_online_btn:focus path {
+			fill: var(--primary-color);
+		}
 
 		/* 12 - Media Queries */
 		@media all and (max-width: 1150px) {
@@ -321,10 +340,9 @@
 
 	<div class="notificationStripe">
 		<div class="d-flex justify-content-md-between flex-column flex-sm-row align-items-center mb-0 pb-0">
-			<a class="notificationBtn" href="https://www.grubhub.com/restaurant/bengal-tiger-indian-food-58-w-56th-st-new-york/287683?classicAffiliateId=%2Fr%2Fw%2F19118%2F&utm_source=https://restaurant.grubhub.com&utm_medium=OOL&utm_campaign=order%20online&utm_content=287683" rel="noopener nofollow" target="_blank">
+			<a class="notificationBtn" data-toggle="modal" data-target="#orderOnline">
 				<i class="fa fa-shopping-bag" aria-hidden="true"></i>Order Online
 			</a>
-
 			<a id="cndr" class="notificationBtn" data-toggle="modal" data-target="#newsModal">
 				<i class="fa fa-clipboard-list" aria-hidden="true"></i>Reservations
 			</a>
@@ -673,8 +691,11 @@
 	<div class="trays container">
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<h1>Trays</h1>
-				<p>Take-Out Only</p>
+				<p class="mb-0 mt-3"><b>CATERING</b></p>
+				<h2>Trays</h2>
+				<a class="notificationBtn order_online_btn d-inline-flex align-items-center mb-3" href="https://www.ezcater.com/catering/pvt/bengal-tiger-indian-food-3?fcv=1" rel="noopener nofollow" target="_blank">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M23.829 20H0V4h23.829v16ZM1.886 18.086h20V5.914h-20v12.172Z"/><path d="m15.857 14.8 4.8-5.6V7.314h-7.543v2.029h4.6l-4.771 5.571v1.915h8V14.8h-5.086Zm-3.4-2.714c0-.6-.086-1.2-.257-1.8-.171-.6-.428-1.143-.829-1.6-.371-.486-.857-.857-1.457-1.172-.6-.285-1.314-.457-2.143-.457-.714 0-1.371.114-1.971.372-.6.257-1.114.6-1.571 1.057-.458.457-.772.971-1.029 1.6-.257.6-.371 1.257-.371 1.971 0 .714.114 1.372.342 1.972.229.6.543 1.142.972 1.6a4.5 4.5 0 0 0 1.543 1.057c.6.257 1.285.371 2.028.371 1.8 0 3.2-.657 4.2-1.943l.172-.228-1.715-1.315-.171.2a4.917 4.917 0 0 1-1 .915c-.343.228-.771.314-1.229.314-.371 0-.714-.057-1.057-.171a2.943 2.943 0 0 1-.885-.486 2.156 2.156 0 0 1-.6-.743 1.759 1.759 0 0 1-.2-.657h7.2l.028-.857Zm-7.2-1.029c.029-.171.086-.343.143-.543.114-.285.286-.543.514-.771.229-.229.486-.4.8-.543A2.45 2.45 0 0 1 7.743 9c.371 0 .743.057 1.028.171.286.115.515.286.715.486.2.2.343.457.428.714.057.2.115.429.143.686h-4.8Z"/></svg>Order Online
+				</a>
 				<table cellpadding="3" cellspacing="0" class="cateringTrays" >
 					<tr>
 						<th>&nbsp;</th>
@@ -808,6 +829,38 @@
 					</div>
 					<div class="col-sm-6 text-center">
 						<a class="notificationBtn mb-2" href="tel:+12122652703" target="_blank" rel="noopener"><i class="fa fa-phone" aria-hidden="true"></i>(212) 265-2703</a>
+					</div>
+				</div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+
+	<div class="modal" id="orderOnline" tabindex="-1">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h4 class="modal-title">Order Online</h4>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+
+			<div class="container">
+				<div class="row d-flex align-items-center">
+					<div class="col-sm-6 text-center">
+						<a class="notificationBtn order_online_btn d-inline-flex align-items-center mb-3" href="https://www.grubhub.com/restaurant/bengal-tiger-indian-food-58-w-56th-st-new-york/287683?classicAffiliateId=%2Fr%2Fw%2F19118%2F&utm_source=https://restaurant.grubhub.com&utm_medium=OOL&utm_campaign=order%20online&utm_content=287683" rel="noopener nofollow" target="_blank">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M20.6 7.199a.38.38 0 0 1-.087-.2c-.218-2.45-.567-4.076-.567-4.076a.664.664 0 0 0-.575-.52l-1.956-.236a.413.413 0 0 0-.465.41v.68a.025.025 0 0 1-.042.018A27.595 27.595 0 0 0 12.957.293 1.73 1.73 0 0 0 11.988 0c-.36 0-.69.107-.968.293C4.266 4.463.549 11.241.405 11.613a.67.67 0 0 0 .44.934l1.947.375c.26.07.457.294.486.568.016.343.383 8.015.845 10.005a.67.67 0 0 0 .648.497h.015c1.135-.028 2.174-.047 3.297-.062H8.08h.096c.12 0 .217-.1.217-.22v-.005c-.045-.67-.143-2.201-.223-3.814l-.007-.132a.413.413 0 0 0-.198-.331 2.1 2.1 0 0 1-1.02-1.695c-.103-2.69-.154-5.8-.007-8.232a.392.392 0 0 1 .782.016v.03c-.096 1.622-.105 3.54-.07 5.431a.463.463 0 0 0 .927-.016c-.036-1.904-.026-3.834.072-5.461a.391.391 0 0 1 .782.016v.03c-.095 1.614-.104 3.52-.07 5.402a.463.463 0 0 0 .926-.014c-.035-1.896-.025-3.815.073-5.434a.392.392 0 0 1 .782.016v.03c-.14 2.366-.094 5.36.002 7.985v.091c0 .718-.36 1.352-.91 1.731a.402.402 0 0 0-.173.305s-.048.403.13 2.357c.083.853.147 1.445.176 1.712.012.101.098.18.202.18h.184-.003c.375-.002.762-.003 1.163-.003h.15c.508 0 .992.001 1.458.003l1.104.01h.002a.21.21 0 0 0 .206-.182c.255-2.342.315-3.657.315-3.657 0-.118-.09-.207-.209-.225l-1.34-.185a.456.456 0 0 1-.383-.329c-.028-.097-.017-.207-.017-.207.543-7.806 3.117-10.436 3.117-10.436.076-.078.125-.108.125-.108a.41.41 0 0 1 .626.184s.02.054.033.187c.222 2.454.113 6.63-.024 9.886-.117 2.765-.258 4.935-.258 4.935v.005c0 .088.072.16.161.16.73.013 1.45.028 2.213.047h.014a.67.67 0 0 0 .648-.498c.462-1.99.83-9.662.846-10.005a.665.665 0 0 1 .486-.568l1.945-.375a.67.67 0 0 0 .441-.934c-.073-.19-1.088-2.068-2.97-4.414"/><defs><clipPath id="a"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath></defs></svg>Order Online
+						</a>
+					</div>
+
+					<div class="col-sm-6 text-center">
+						<a class="notificationBtn order_online_btn d-inline-flex align-items-center mb-3" href="https://www.ezcater.com/catering/pvt/bengal-tiger-indian-food-3?fcv=1" rel="noopener nofollow" target="_blank">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M23.829 20H0V4h23.829v16ZM1.886 18.086h20V5.914h-20v12.172Z"/><path d="m15.857 14.8 4.8-5.6V7.314h-7.543v2.029h4.6l-4.771 5.571v1.915h8V14.8h-5.086Zm-3.4-2.714c0-.6-.086-1.2-.257-1.8-.171-.6-.428-1.143-.829-1.6-.371-.486-.857-.857-1.457-1.172-.6-.285-1.314-.457-2.143-.457-.714 0-1.371.114-1.971.372-.6.257-1.114.6-1.571 1.057-.458.457-.772.971-1.029 1.6-.257.6-.371 1.257-.371 1.971 0 .714.114 1.372.342 1.972.229.6.543 1.142.972 1.6a4.5 4.5 0 0 0 1.543 1.057c.6.257 1.285.371 2.028.371 1.8 0 3.2-.657 4.2-1.943l.172-.228-1.715-1.315-.171.2a4.917 4.917 0 0 1-1 .915c-.343.228-.771.314-1.229.314-.371 0-.714-.057-1.057-.171a2.943 2.943 0 0 1-.885-.486 2.156 2.156 0 0 1-.6-.743 1.759 1.759 0 0 1-.2-.657h7.2l.028-.857Zm-7.2-1.029c.029-.171.086-.343.143-.543.114-.285.286-.543.514-.771.229-.229.486-.4.8-.543A2.45 2.45 0 0 1 7.743 9c.371 0 .743.057 1.028.171.286.115.515.286.715.486.2.2.343.457.428.714.057.2.115.429.143.686h-4.8Z"/></svg>Party Trays
+						</a>
 					</div>
 				</div>
 			</div>
